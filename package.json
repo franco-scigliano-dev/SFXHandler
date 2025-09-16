@@ -1,0 +1,19 @@
+{
+  "name": "com.fscigliano.sfxhandler",
+  "version": "1.0.0",
+  "displayName": "SFX Handler",
+  "description": "Small sounds handler with built-in Addressables support.",
+  "unity": "2021.3",
+  "keywords": [
+    "tool"
+  ],
+  "author": {
+    "name": "Franco Scigliano",
+    "email": "franco.scigliano.dev@gmail.com",
+    "url": "https://github.com/franco-scigliano-dev/SFXHandler"
+  },
+  "dependencies": {
+    "com.unity.addressables": "2.3.16",
+    "com.unity.scriptablebuildpipeline": "2.2.11"
+  }
+}
