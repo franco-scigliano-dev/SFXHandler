@@ -28,16 +28,16 @@ namespace com.fscigliano.SFXHandler
         {
             if (_autoStart)
             {
-                Init();
+                _ = InitAsync();
             }
         }
 
-        public virtual async Task Init()
+        public virtual async Task InitAsync()
         {
             try
             {
                 InitializeAudioSources();
-                await InitializeAsync();
+                await LoadAsync();
             }
             catch (Exception e)
             {
@@ -61,7 +61,7 @@ namespace com.fscigliano.SFXHandler
         /// <summary>
         /// Initializes the audio system asynchronously based on loading strategy
         /// </summary>
-        public virtual async Task InitializeAsync()
+        protected virtual async Task LoadAsync()
         {
             if (_isInitialized) return;
 
@@ -73,7 +73,7 @@ namespace com.fscigliano.SFXHandler
         /// <summary>
         /// Preloads all audio in the system
         /// </summary>
-        public virtual async Task PreloadAllAudio()
+        protected virtual async Task PreloadAllAudio()
         {
             var tasks = new List<Task>();
             for (var index = 0; index < _preloadAudioAssets.Length; index++)
